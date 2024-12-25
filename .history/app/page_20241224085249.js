@@ -1,0 +1,47 @@
+"use client";
+import { useState } from "react";
+import WeatherData from "./WeatherData";
+import ForecastData from "./ForecastData";
+import AirQualityData from "./AirQualityData";
+
+export default function Home() {
+  const [city, setCity] = useState("");
+  const [error, setError] = useState("");
+
+  const handleCityChange = (e) => setCity(e.target.value);
+
+  const handleSearch = () => {
+    if (!city) {
+      setError("Please enter a city name");
+      return;
+    }
+    setError(""); // Reset error if city is entered
+  };
+
+  return (
+    <div className="container">
+      <img src="/path-to-logo.png" alt="Logo" className="logo" />
+      <h1 className="title">Weather Application</h1>
+      <input
+        type="text"
+        placeholder="Enter city name"
+        value={city}
+        onChange={handleCityChange}
+        className="input"
+      />
+      <button onClick={handleSearch} className="button">
+        Get Weather
+      </button>
+
+      {error && <p className="error-message">{error}</p>}
+
+      {city && (
+        <div className="main-content">
+          <WeatherData city={city} />
+          <ForecastData city={city} />
+          <AirQualityData city={city} />
+        </div>
+      )}
+    </div>
+  );
+}

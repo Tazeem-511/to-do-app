@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://source.unsplash.com/1600x900/?weather,sky') no-repeat center center/cover;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 500px;
+  width: 90%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  backdrop-filter: blur(15px);
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f3f4f6;
+}
+
+input {
+  width: 70%;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background-color: #45a049;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin: 15px 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.weather-data {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.weather-data h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weather-data p {
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  input, button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  .weather-data h2 {
+    font-size: 1.5rem;
+  }
+
+  .weather-data p {
+    font-size: 0.9rem;
+  }
+}
